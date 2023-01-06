@@ -1,0 +1,39 @@
+body{
+margin: 0 auto;
+}
+h1{
+   font-family: 'GrotesqueBourgeoisieRegular';
+   font-weight: normal;
+   font-style: normal;
+   text-align: center;
+}
+.table{
+ display: table;
+ text-align: center;
+ margin: 0 auto;
+ }
+
+div *{
+ display: table-cell;
+
+ width: 7%;
+ height: 200px;
+ outline: 5px solid rgb(250, 250, 250);
+}
+#first{
+background: #809bce;
+
+}
+#second{
+background: #95B8D1;
+}
+#third{
+background: #b8e0d2;
+}
+#fourth{
+background: #D6EADF
+}
+#fifth{
+border: 20px solid #EAC4D5;
+background: #EAC4D5;
+}

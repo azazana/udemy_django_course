@@ -1,0 +1,18 @@
+
+p{
+   font-family: 'AvaraBold';
+   font-weight: normal;
+   font-style: normal;
+}
+body{
+font-size: 20px;
+}
+#two{
+font-size:1.5em;
+}
+p{
+/*font-style:italic;*/
+}
+h1{
+    text-align: center;
+}
