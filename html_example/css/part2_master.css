@@ -1,0 +1,17 @@
+body{
+background: url(http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcSO9EjqPIwEbgSlEcN3FIssui6OMLrIPqBXM1K0bBXrTNHecd99YMSTQ6tD1R5gWHml6iCFqbWQ2wn3-sWd7qQ);
+}
+div{
+background:red;
+border-color:orange;
+border-width: 4px;
+border-style:double;
+}
+p{
+color: yellow
+}
+
+span{
+background:red;
+color:black
+}
