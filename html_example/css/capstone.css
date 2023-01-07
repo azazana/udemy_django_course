@@ -1,0 +1,32 @@
+#submit{
+border-radius: 10px;
+width: 100px; height: 50px;
+background: #e63946;
+border-style: groove;
+font-weight: bold;
+box-shadow: 0 0 10px orange;
+}
+p, h2, h1, h3, label{
+color: white;
+text-align:center;
+}
+body {
+  border: 70px solid #a8dadc;
+  border-top: none;
+  margin: 0px;
+  padding: 200px;
+  padding-top: 0;
+  background: #1d3557;
+  font-family: 'LaverickRegular';
+   font-weight: normal;
+   font-style: normal;
+}
+label, input {
+  display: block;
+  left: 50%;
+  margin: 0 auto;
+}
+
+label{
+font-size:0.7em
+}
