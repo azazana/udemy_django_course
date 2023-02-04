@@ -1,14 +1,13 @@
-var allCells = document.querySelectorAll(".cell")
-function click(event){
-    var cell = event.target
-    if (cell.textContent == ""){
-        cell.textContent = "X";
+var allCells = document.querySelectorAll("td")
+function click(){
+    if (this.textContent === ""){
+        this.textContent = "X";
     }
-    else if (cell.textContent == "X") {
-        cell.textContent = "O";
+    else if (this.textContent === "X") {
+        this.textContent = "O";
     }
     else{
-        cell.textContent = "";
+        this.textContent = "";
     }
 }
 
