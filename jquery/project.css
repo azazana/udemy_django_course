@@ -1,0 +1,16 @@
+.circle{
+  height: 100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.turnBlue{
+ color:white;
+ background-color: blue;
+
+}
+.turnRed{
+ color:white;
+ background: red;
+}
