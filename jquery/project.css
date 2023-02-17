@@ -1,14 +1,12 @@
 .circle{
   height: 100px;
   width: 100px;
-  background-color: #bbb;
+  background-color: grey;
   border-radius: 50%;
   display: inline-block;
 }
 .turnBlue{
- color:white;
- background-color: blue;
-
+  background-color: blue;
 }
 .turnRed{
  color:white;
