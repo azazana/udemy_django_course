@@ -16,7 +16,6 @@ function checkFinish(countColor){
 if (countColor>=4) {
     text = "has won! Refresh your browser to play again!"
     if (!first){
-
     $('h3').text("Player One "+text);
     }
     else{
@@ -24,19 +23,31 @@ if (countColor>=4) {
     }
     finish = true
     }
-
 }
+
+//function changeColor(rowIndex,colIndex,class){
+//    var currentButton = $('#myTable tr:eq('+rowIndex+")" ).find('td:eq('+colIndex+')').find('button');
+//    currentButton.toggleClass(class);
+//}
+//function getColor(rowIndex,colIndex){
+//    var currentButton = $('#myTable tr:eq('+rowIndex+")" ).find('td:eq('+colIndex+')').find('button').css('background-color');
+//}
+//function checkBottom(colIndex){
+//var colorReport = getColor(5,colIndex)
+//for (var row = 5;row=0;row--)
+//}
 $(document).ready(
 function() {
   $("#myTable tbody td").click(function() {
     var columnIndex = $(this).index();
-    var i = 7
-    while (i<=7 && i!==0 && !finish) {
+    var i = 6
+    while (i<=6 && i!==0 && !finish) {
         i--;
         var currentButton = $('#myTable tr:eq('+i+")" ).find('td:eq('+columnIndex+')').find('button');
         var color = currentButton.css("background-color");
         if (color==='rgb(128, 128, 128)'){
                 if (first){
+
                     currentButton.toggleClass('turnBlue');
                     classButton = 'turnBlue'
                 }else{
@@ -52,7 +63,7 @@ function() {
     var countColor = 1
     var downI=i
     if (downI<=3 && !finish){
-        while (downI<=6){
+        while (downI<=5){
             downI++
             var downButton = $('#myTable tr:eq('+downI+")" ).find('td:eq('+columnIndex+')').find('button');
             if (downButton.hasClass(classButton)){
@@ -93,11 +104,11 @@ function() {
      var columnIndexObliquelyLeft = columnIndex
      var lineIndexObliquelyLeft = i
      while ((countColor<4||columnIndexObliquelyLeft<0||lineIndexObliquelyLeft<0||
-     lineIndexObliquelyLeft>=7||columnIndexObliquelyLeft>=7)&& !finish){
+     lineIndexObliquelyLeft>=6||columnIndexObliquelyLeft>=7)&& !finish){
          //left
         columnIndexObliquelyLeft--
         lineIndexObliquelyLeft++
-        if ( lineIndexObliquelyLeft>=7||columnIndexObliquelyLeft>=7||columnIndexObliquelyLeft<0||lineIndexObliquelyLeft<0) {
+        if ( lineIndexObliquelyLeft>=6||columnIndexObliquelyLeft>=7||columnIndexObliquelyLeft<0||lineIndexObliquelyLeft<0) {
         break
         }
        var ObliquelyButton = $('#myTable tr:eq('+lineIndexObliquelyLeft+")" ).find('td:eq('+columnIndexObliquelyLeft+')').find('button');
@@ -111,12 +122,12 @@ function() {
      var columnIndexObliquelyRight = columnIndex
      var lineIndexObliquelyRight = i
      while ((countColor<4||columnIndexObliquelyRight<0||lineIndexObliquelyRight<0||
-     lineIndexObliquelyRight>=7||columnIndexObliquelyRight>=7)&& !finish){
+     lineIndexObliquelyRight>=6||columnIndexObliquelyRight>=7)&& !finish){
          //right
          columnIndexObliquelyRight++
          lineIndexObliquelyRight--
          if ( columnIndexObliquelyRight<0||lineIndexObliquelyRight<0||
-     lineIndexObliquelyRight>=7||columnIndexObliquelyRight>=7) {
+     lineIndexObliquelyRight>=6||columnIndexObliquelyRight>=7) {
         break
         }
         var ObliquelyButton = $('#myTable tr:eq('+lineIndexObliquelyRight+")" ).find('td:eq('+columnIndexObliquelyRight+')').find('button');
@@ -134,7 +145,7 @@ function() {
      var lineIndexObliquelyLeft = i
      console.log('currentButton')
      while ((countColor<4||columnIndexObliquelyLeft<0||lineIndexObliquelyLeft<0||
-     lineIndexObliquelyLeft>=7||columnIndexObliquelyLeft>=7)&& !finish){
+     lineIndexObliquelyLeft>=6||columnIndexObliquelyLeft>=7)&& !finish){
          //left
         columnIndexObliquelyLeft++
         lineIndexObliquelyLeft++
@@ -152,12 +163,12 @@ function() {
      var columnIndexObliquelyRight = columnIndex
      var lineIndexObliquelyRight = i
      while ((countColor<4||columnIndexObliquelyRight<0||lineIndexObliquelyRight<0||
-     lineIndexObliquelyRight>=7||columnIndexObliquelyRight>=7)&& !finish){
+     lineIndexObliquelyRight>=6||columnIndexObliquelyRight>=7)&& !finish){
          //right
          columnIndexObliquelyRight--
          lineIndexObliquelyRight--
          if ( columnIndexObliquelyRight<0||lineIndexObliquelyRight<0||
-     lineIndexObliquelyRight>=7||columnIndexObliquelyRight>=7) {
+     lineIndexObliquelyRight>=6||columnIndexObliquelyRight>=7) {
         break
         }
         var ObliquelyButton = $('#myTable tr:eq('+lineIndexObliquelyRight+")" ).find('td:eq('+columnIndexObliquelyRight+')').find('button');

@@ -8,7 +8,7 @@ var player2Color = 'rgb(237, 45, 73)';
 
 var game_on = true;
 var table = $('table tr');
-
+console.log(table)
 // http://stackoverflow.com/questions/6139407/getting-td-by-index-with-jquery
 function reportWin(rowNum,colNum) {
   console.log("You won starting at this row,col");
@@ -109,14 +109,14 @@ var currentColor = player1Color;
 // Start with Player One
 $('h3').text(player1+": it is your turn, please pick a column to drop your blue chip.");
 
-$('.board button').on('click',function() {
+$('.circle').on('click',function() {
 
   // Recognize what column was chosen
   var col = $(this).closest("td").index();
 
   // Get back bottom available row to change
   var bottomAvail = checkBottom(col);
-
+  console.log(bottomAvail);
   // Drop the chip in that column at the bottomAvail Row
   changeColor(bottomAvail,col,currentColor);
 

@@ -4,11 +4,11 @@
   background-color: grey;
   border-radius: 50%;
   display: inline-block;
+  margin:1px;
 }
 .turnBlue{
   background-color: blue;
 }
 .turnRed{
- color:white;
- background: red;
+ background-color:  red;
 }
