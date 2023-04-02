@@ -1,5 +1,6 @@
 class Dog():
     pass
 
-x=Dog()
+
+x = Dog()
 print(type(x))
