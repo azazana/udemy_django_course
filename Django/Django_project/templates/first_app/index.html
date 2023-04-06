@@ -3,12 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Melody</title>
-    <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+    <title>Django Level Two</title>
+    <link rel="stylesheet" href="{% static 'css/my_style.css' %}"/>
 </head>
 <body>
-<h1>Hello this is a test page</h1>
-<h2>This is h2 {{insert_content}}</h2>
-<!--<img src="{% static 'images\20190216_193048.jpg' %}" alt="Uh Oh, can't show">-->
+<h1>Hi welcome to Django level two!</h1>
+<h2>Here are your access records:</h2>
+<div class="djangotwo">
+    {%if access_records %}
+    <table>
+        <thead>
+        <th>Site Name</th>
+        <th>Date Accessed</th>
+        </thead>
+    {% for acc in access_records %}
+        <tr>
+            <td>{{acc.name}}</td>
+            <td>{{acc.date}}</td>
+        </tr>
+    {%endfor%}
+    </table>
+    {% else %}
+    <p>NO ACCESS RECORDS FOUND</p>
+    {%endif%}
+    </div>
 </body>
 </html>
