@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{{% extends "blog/base.html" %}}
+{% block content %}
+<div class ="container py-4">
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Please login:</h1>
+          <h3>(Must be SuperUser, please check with the site admin)</h3>
+          {%if form.errors %}
+          <p>You username and password didn't match! Please try again.</p>
+          {% endif %}
+          <form action="{%url 'login' %}" method="post">
+              {%csrf_token%}
+              {%form.as_p%}
+              <input type="submit" class="btn btn-primary btn-lg" value="Login">
+              <input type="hidden" name="next" value="{{next}}">
+          </form>
+<!--          <button class="btn btn-primary btn-lg" type="button">Example button</button>-->
+      </div>
+    </div>
+</div>
