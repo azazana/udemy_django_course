@@ -36,12 +36,11 @@
         <li class="nav-item">
           <a class="nav-link" href="https://www.linkedin.com">LinkedIn</a>
         </li>
-
-<!--      </ul>-->
-<!--        <ul class="navbar-nav navbar-right">-->
+        </ul>
+        <ul class="navbar-nav justify-content-center">
             {%if user.is_authenticated%}
-            <li class="nav-item">
-                <a class="nav-link" href="{%url 'post_new'%}">New Post</a>
+            <li>
+                <a class="nav-item nav-link" href="{%url 'post_new'%}">New Post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{%url 'post_draft_list'%}">Drafts</a>
@@ -57,6 +56,7 @@
               <span class="fa fa-user" aria-hidden="true"></span></a>
             {% endif%}
         </ul>
+
     </div>
   </div>
 </nav>

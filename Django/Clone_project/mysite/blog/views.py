@@ -67,8 +67,10 @@ def post_publish(request,pk):
 @login_required
 def add_comment_to_post(request,pk):
     post = get_object_or_404(Post,pk=pk)
-    if request =="POST":
+    print(request)
+    if request.method =="POST":
         form = CommentForm(request.POST)
+        print("Test")
         if form.is_valid():
             comment=form.save(commit=False)
             comment.post = post
@@ -86,7 +88,7 @@ def comment_approve(request,pk):
 
 @login_required
 def comment_remove(request,pk):
-    comment = get_object_or_404(Comment,pk)
+    comment = get_object_or_404(Comment,pk=pk)
     pk_post = comment.post.pk
     comment.delete()
     return redirect("post_detail",pk_post)
