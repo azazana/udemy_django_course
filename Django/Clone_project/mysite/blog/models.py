@@ -1,20 +1,21 @@
 from django.db import models
 from django.urls import reverse
-from django.utils import timezone
+from django.utils.timezone import now
 
 
-class Time(models.Model):
-    create_date = models.DateTimeField(default=timezone.now())
+# class Time(models.Model):
+#     create_date = models.DateTimeField(default=now())
 
 
-class Post(models.Model, Time):
-    author = models.ForeignKey("auth.User")
+class Post(models.Model):
+    create_date = models.DateTimeField(default=now())
+    author = models.ForeignKey("auth.User", on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    publeshed_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
-        self.publeshed_date = timezone.now()
+        self.published_date = now()
         self.save()
 
     def get_absolute_url(self):
@@ -27,8 +28,9 @@ class Post(models.Model, Time):
         return self.title
 
 
-class Comment(models.Model, Time):
-    post = models.ForeignKey("blog.Post", related_name="comments")
+class Comment(models.Model):
+    create_date = models.DateTimeField(default=now())
+    post = models.ForeignKey("blog.Post", related_name="comments", on_delete=models.CASCADE)
     author = models.CharField(max_length=200)
     text = models.TextField()
     approved_comment = models.BooleanField(default=False)
